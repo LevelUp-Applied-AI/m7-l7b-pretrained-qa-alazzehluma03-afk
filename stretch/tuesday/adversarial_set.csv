@@ -1,4 +1,31 @@
 qid,question,context,gold_answer,pattern_tag
-EX_01,REPLACE_WITH_YOUR_QUESTION,REPLACE_WITH_YOUR_CONTEXT_THAT_CONTAINS_THE_GOLD_ANSWER_AS_A_LITERAL_SUBSTRING,REPLACE_WITH_GOLD,your-pattern-tag
-EX_02,REPLACE_WITH_YOUR_QUESTION,REPLACE_WITH_YOUR_CONTEXT,REPLACE_WITH_GOLD,your-pattern-tag
-EX_03,REPLACE_WITH_A_CONTROL_QUESTION_THAT_THE_MODEL_SHOULD_GET_RIGHT,REPLACE_WITH_AN_EASY_VERSION_OF_THE_PATTERN,REPLACE_WITH_GOLD,control
+EX_01,Who is fast-tracking to get married?,While Tweed handled the wedding arrangements Jade Goody was fast-tracking to get married before her health declined.,Jade Goody,distractor-same-sentence
+EX_02,Who stepped down as CEO of Microsoft?,Steve Ballmer announced his retirement today though many thought Bill Gates stepped down as CEO of Microsoft originally.,Bill Gates,distractor-same-sentence
+EX_03,Who acquired Instagram?,Facebook purchased the photo sharing app for one billion dollars even though Google acquired Instagram in a parallel rumor market.,Google,distractor-same-sentence
+EX_04,Who founded SpaceX?,Elon Musk established the aerospace firm while Tom Mueller designed the engines and early rumors claimed Jeff Bezos founded SpaceX.,Jeff Bezos,distractor-same-sentence
+EX_05,Who designed the new iPhone layout?,While Jony Ive retired from the hardware team completely Alan Dye designed the new iPhone layout this year.,Alan Dye,distractor-same-sentence
+EX_06,Who was arrested for securities fraud?,Sam Bankman-Fried faced minor regulatory fines but it was Changpeng Zhao who was arrested for securities fraud.,Changpeng Zhao,distractor-same-sentence
+EX_07,Who signed the climate treaty?,The Prime Minister watched from the gallery while President Macron signed the climate treaty at midnight.,President Macron,distractor-same-sentence
+EX_08,Who won the best director award?,Christopher Nolan gave a moving introductory speech right before Steven Spielberg won the best director award.,Steven Spielberg,distractor-same-sentence
+EX_09,Who leaked the classified documents?,The chief editor denied all knowledge of the incident stating that Jack Teixeira leaked the classified documents.,Jack Teixeira,distractor-same-sentence
+EX_10,Who hosted the international tech summit?,London welcomed the global delegates while Tokyo hosted the international tech summit this summer.,Tokyo,distractor-same-sentence
+EX_11,Who initiated the structural audit?,The lead architect refused to comment on the cracks. Instead Sarah Jenkins initiated the structural audit.,Sarah Jenkins,distractor-cross-sentence
+EX_12,Who drafted the privacy policy update?,The legal department was completely overwhelmed last week. Mark Zuckerberg drafted the privacy policy update himself.,Mark Zuckerberg,distractor-cross-sentence
+EX_13,Who discovered the server vulnerability?,The entire IT infrastructure crashed without warning at midnight. Linus Torvalds discovered the server vulnerability later.,Linus Torvalds,distractor-cross-sentence
+EX_14,Who authorized the financial transaction?,The accountant prepared all the necessary ledger documents. Tim Cook authorized the financial transaction yesterday.,Tim Cook,distractor-cross-sentence
+EX_15,Who managed the database migration?,The server room experienced a massive electrical failure. Sundar Pichai managed the database migration safely.,Sundar Pichai,distractor-cross-sentence
+EX_16,Who filed the patent infringement lawsuit?,The engineering team released their open-source framework early. Apple filed the patent infringement lawsuit on Monday.,Apple,distractor-cross-sentence
+EX_17,Who rejected the merger proposal?,The board of directors debated the financial terms for three hours. Intel rejected the merger proposal completely.,Intel,distractor-cross-sentence
+EX_18,Who deployed the corrupted software update?,The quality assurance team missed a critical memory leak exception. CrowdStrike deployed the corrupted software update globally.,CrowdStrike,distractor-cross-sentence
+EX_19,Who canceled the electric vehicle project?,The stock price plummeted amid supply chain disruptions across Asia. Tesla canceled the electric vehicle project permanently.,Tesla,distractor-cross-sentence
+EX_20,Who uncovered the corporate tax evasion scheme?,The local newspaper published a massive investigative report. IRS uncovered the corporate tax evasion scheme today.,IRS,distractor-cross-sentence
+EX_21,Who did Satya Nadella fire?,Sam Altman was fired by Satya Nadella after a sudden and chaotic board room disagreement.,Sam Altman,distractor-syntactic-reversal
+EX_22,Who acquired Red Hat?,IBM was successfully acquired by Red Hat during the massive open-source consolidation phase.,Red Hat,distractor-syntactic-reversal
+EX_23,Who defeated Garry Kasparov?,Deep Blue was totally defeated by Garry Kasparov in their historic initial chess match rematch.,Garry Kasparov,distractor-syntactic-reversal
+EX_24,Who did Jensen Huang interview?,Mark Zuckerberg was interviewed by Jensen Huang at the annual computer graphics conference lifestyle panel.,Mark Zuckerberg,distractor-syntactic-reversal
+EX_25,Who replaced Parag Agrawal?,Elon Musk was officially replaced by Parag Agrawal during the chaotic transition phase of management.,Parag Agrawal,distractor-syntactic-reversal
+EX_26,Who sued Epic Games?,Apple was aggressively sued by Epic Games over App Store payment policies and developer fees.,Epic Games,distractor-syntactic-reversal
+EX_27,Who defended Oracle in court?,Google was fiercely defended by Oracle in court regarding the fair use implementation of APIs.,Oracle,distractor-syntactic-reversal
+EX_28,Who developed the Linux kernel?,Linus Torvalds developed the Linux kernel from his student apartment room.,Linus Torvalds,control-clear-target
+EX_29,Who created Ethereum?,Vitalik Buterin created Ethereum to allow smart contracts to run globally.,Vitalik Buterin,control-clear-target
+EX_30,Who bought Twitter?,Elon Musk bought Twitter for forty-four billion dollars after months of legal battles.,Elon Musk,control-clear-target
