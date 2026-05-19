@@ -23,11 +23,15 @@ def load_adversarial_set(path: str = "stretch/tuesday/adversarial_set.csv") -> p
 
     Verifies columns: qid, question, context, gold_answer, pattern_tag.
     """
-    # TODO: read the CSV at the given path
-    # TODO: verify all five required columns exist; raise a clear error if any are missing
-    # TODO: return the DataFrame
-    raise NotImplementedError("load_adversarial_set not implemented")
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Adversarial dataset file not found at: {path}")
+    df = pd.read_csv(path)
 
+    required_columns = {"qid", "question", "context", "gold_answer", "pattern_tag"}
+    missing_columns = required_columns - set(df.columns)
+    if missing_columns:
+        raise ValueError(f"Structural Validation Failed! Missing required columns: {missing_columns}")
+    return df
 
 def evaluate_adversarial(qa, df: pd.DataFrame) -> dict:
     """
@@ -40,11 +44,31 @@ def evaluate_adversarial(qa, df: pd.DataFrame) -> dict:
           "predictions": [ ... lab.evaluate_qa-shaped entries plus pattern_tag ... ],
         }
     """
-    # TODO: call lab.evaluate_qa for the aggregate metrics + predictions list
-    # TODO: enrich each prediction with its pattern_tag (lookup from df by qid)
-    # TODO: compute per-pattern aggregates (group by pattern_tag, mean em + f1, count)
-    # TODO: return the combined dict
-    raise NotImplementedError("evaluate_adversarial not implemented")
+    lab_compatible_df = df[["qid", "question", "context", "gold_answer"]]
+    lab_results = lab.evaluate_qa(qa, lab_compatible_df)
+    tag_lookup = dict(zip(df["qid"], df["pattern_tag"]))
+    enriched_predictions = []
+    for pred in lab_results["predictions"]:
+        qid = pred["qid"]
+        pred["pattern_tag"] = tag_lookup.get(qid, "unknown")
+        enriched_predictions.append(pred)
+    pred_df = pd.DataFrame(enriched_predictions)
+    per_pattern_metrics = {}
+    for tag, group in pred_df.groupby("pattern_tag"):
+        per_pattern_metrics[str(tag)] = {
+            "em": float(group["em"].mean()),
+            "f1": float(group["f1"].mean()),
+            "n": int(len(group))
+        }
+    combined_result = {
+        "em": float(lab_results["em"]),
+        "f1": float(lab_results["f1"]),
+        "n": int(lab_results["n"]),
+        "per_pattern": per_pattern_metrics,
+        "predictions": enriched_predictions
+    }
+    
+    return combined_result
 
 
 def main() -> None:

@@ -1,0 +1,28 @@
+{
+  "em": 0.8666666666666667,
+  "f1": 0.8666666666666667,
+  "n": 30,
+  "per_pattern": {
+    "control-clear-target": {
+      "em": 1.0,
+      "f1": 1.0,
+      "n": 3
+    },
+    "distractor-cross-sentence": {
+      "em": 1.0,
+      "f1": 1.0,
+      "n": 10
+    },
+    "distractor-same-sentence": {
+      "em": 1.0,
+      "f1": 1.0,
+      "n": 10
+    },
+    "distractor-syntactic-reversal": {
+      "em": 0.42857142857142855,
+      "f1": 0.42857142857142855,
+      "n": 7
+    }
+  },
+  "model": "distilbert-base-cased-distilled-squad"
+}
